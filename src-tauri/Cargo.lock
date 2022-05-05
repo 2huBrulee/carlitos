@@ -68,6 +68,7 @@ checksum = "08f9b8508dccb7687a1d6c4ce66b2b0ecef467c94667de27d8d7fe1f8d2a9cdc"
 name = "app"
 version = "0.1.0"
 dependencies = [
+ "refinery",
  "rusqlite",
  "serde",
  "serde_json",
@@ -2529,6 +2530,49 @@ dependencies = [
 ]
 
 [[package]]
+name = "refinery"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5f02bce2299450431623ef714bef438f1ae9badfb123ef23b114f0ef4300237f"
+dependencies = [
+ "refinery-core",
+ "refinery-macros",
+]
+
+[[package]]
+name = "refinery-core"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9e21e4c78f030876a62ac983e96baa45403878ec58bc6a3722123736a82a0a9"
+dependencies = [
+ "async-trait",
+ "cfg-if",
+ "lazy_static",
+ "log",
+ "regex",
+ "serde",
+ "siphasher",
+ "thiserror",
+ "time",
+ "toml",
+ "url",
+ "walkdir",
+]
+
+[[package]]
+name = "refinery-macros"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e53d3fed32d2b561d99f1f2d976559a8ce1f3999acb1afb95f528777cac0cbe5"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "refinery-core",
+ "regex",
+ "syn",
+]
+
+[[package]]
 name = "regex"
 version = "1.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3387,6 +3431,7 @@ version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2702e08a7a860f005826c6815dcac101b19b5eb330c27fe4a5928fec1d20ddd"
 dependencies = [
+ "itoa 1.0.1",
  "libc",
  "num_threads",
 ]
