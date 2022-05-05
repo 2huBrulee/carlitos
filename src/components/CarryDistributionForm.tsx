@@ -8,6 +8,7 @@ import {
 } from '@mantine/core';
 import { FC } from 'react';
 import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
+import { saveCarryInfoData } from '../ext';
 
 interface CarryDistributionFormInputs {
   code: string;
@@ -28,8 +29,13 @@ const CarryDistributionForm: FC = () => {
     keyName: 'id',
   });
 
-  const onSubmit: SubmitHandler<CarryDistributionFormInputs> = (data) =>
+  const onSubmit: SubmitHandler<CarryDistributionFormInputs> = async (data) => {
     console.log(data);
+
+    const x = await saveCarryInfoData();
+
+    console.log({ x });
+  };
 
   return (
     <Container>
